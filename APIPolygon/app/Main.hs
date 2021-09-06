@@ -4,13 +4,12 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeOperators     #-}
 
-import System.IO 
-import Data.Text                  (pack)
-import Control.Monad.IO.Class     (liftIO)
-import Network.HTTP.Client        (newManager)
-import Network.HTTP.Client.TLS    (tlsManagerSettings)
-
-import Servant.Client             (mkClientEnv, runClientM, parseBaseUrl)
+import System.IO                (IOMode (ReadMode), openFile, hGetLine)
+import Data.Text                (pack)
+import Control.Monad.IO.Class   (liftIO)
+import Network.HTTP.Client      (newManager)
+import Network.HTTP.Client.TLS  (tlsManagerSettings)
+import Servant.Client           (mkClientEnv, runClientM, parseBaseUrl)
 
 import System.Environment ()
 -- for handling array of results
